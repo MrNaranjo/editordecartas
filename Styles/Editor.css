@@ -1,0 +1,19 @@
+.editor{
+    margin: 15px 0px;
+}
+
+.editor .menus{
+    background-color: #456456;
+}
+
+.editor .ferramentas{
+    background-color: #333444;
+}
+
+.editor .biblioteca{
+    background-color: #159753;
+}
+
+.editor .area-trabalho{
+    background-color: #024680;   
+}

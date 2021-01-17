@@ -1,0 +1,23 @@
+.page{
+    width: 992px;
+    margin: auto;
+    min-height: 100vh;
+}
+
+.page .cabecalho{
+    width: 100%;
+    text-align: center;
+    min-height: 100px;
+    background-color: #FAFAFA;
+}
+
+.page .rodape{
+    width: 100%;
+    text-align: center;
+    min-height: 100px;
+    background-color: #AAA;
+}
+
+.page .conteudo{
+    width: 100%;
+}
