@@ -5,9 +5,9 @@ class Editor extends React.Component {
     constructor(props) {
         super(props);
 
-        this.onLayoutChange = this.onLayoutChange.bind(this);
-        this.onCardImgChange = this.onCardImgChange.bind(this);
         this.onUploadImg = this.onUploadImg.bind(this);
+        this.downloadCard = this.downloadCard.bind(this);
+        this.novaCarta = this.novaCarta.bind(this);
 
         this.state = {
             card: {
@@ -15,14 +15,6 @@ class Editor extends React.Component {
             },
             collections: {}
         };
-    }
-
-    onLayoutChange(layout) {
-
-    }
-
-    onCardImgChange(img) {
-
     }
 
     onUploadImg(imagem, nome, collection) {
@@ -39,15 +31,25 @@ class Editor extends React.Component {
         });
     }
 
+    downloadCard(){
+        console.log("downloadCard");
+    }
+
+    novaCarta(){
+        console.log("novaCarta");
+    }
+
     render() {
 
         return <div className="editor">
             <Menus
-                onUploadImg={this.onUploadImg} />
+                onUploadImg={this.onUploadImg} 
+                downloadCard={this.downloadCard}
+                novaCarta={this.novaCarta}/>
             <Ferramentas />
+            <AreaTrabalho />
             <Biblioteca
                 collections={this.state.collections} />
-            <AreaTrabalho />
         </div>;
     }
 }
@@ -74,15 +76,15 @@ class Menus extends React.Component {
     }
 
     novoClick(e) {
-        console.log("novoClick");
+        //TODO Criar modal de confirmação
+        this.props.novaCarta();
     }
 
     downloadClick(e) {
-        console.log("downloadClick");
+        this.props.downloadCard();
     }
 
     carregarImagemClick(e) {
-        console.log("carregarImagemClick");
         this.setState(prevState => {
             let altered = Object.assign({}, prevState);
             altered.mostrarModal = true;
@@ -99,9 +101,6 @@ class Menus extends React.Component {
     }
 
     adicionarImagem(e) {
-        //onUploadImg
-        console.log("adicionarImagem");
-
         let { carregamento } = this.state;
         this.props.onUploadImg(carregamento.imagem, carregamento.nome, carregamento.collection);
         this.fecharModal();
@@ -181,7 +180,13 @@ class Ferramentas extends React.Component {
     }
 
     render() {
-        return <div className="ferramentas">Ferramentas</div>;
+        return <div className="ferramentas area">
+            <ul>
+                <li>Mover</li>
+                <li>Texto</li>
+                <li>Imagem</li>
+            </ul>
+        </div>;
     }
 }
 
@@ -195,13 +200,13 @@ class Biblioteca extends React.Component {
             let collection = `[${this.props.collections[value].length}] ${value}`;
 
             let imgs = this.props.collections[value].map((value, index, array) => {
-                return <li className="imagem-biblioteca">
+                return <li className="imagem-biblioteca" key={`coll${index}`}>
                     <img className="miniatura" src={value.imagem}></img>
                     {value.nome}
                 </li>
             });
 
-            return <li className="collection"> <span className="caret" onClick={(e) => {
+            return <li className="collection" key={value}> <span className="caret" onClick={(e) => {
                 e.target.parentElement.querySelector(".aninhado").classList.toggle("ativo");
                 e.target.classList.toggle("caret-down");
             }}>{collection}</span>
@@ -209,7 +214,7 @@ class Biblioteca extends React.Component {
             </li>;
         });
 
-        return <div className="biblioteca">
+        return <div className="biblioteca area">
             <p>[{Object.keys(this.props.collections).length}] Collections</p>
             <div>
                 <ul className="hierarquia">
@@ -226,7 +231,7 @@ class AreaTrabalho extends React.Component {
     }
 
     render() {
-        return <div className="area-trabalho">
+        return <div className="area-trabalho area">
             <canvas id="card">
 
             </canvas>

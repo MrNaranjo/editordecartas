@@ -7,14 +7,14 @@
 .page .cabecalho{
     width: 100%;
     text-align: center;
-    min-height: 100px;
+    min-height: 75px;
     background-color: #FAFAFA;
 }
 
 .page .rodape{
     width: 100%;
     text-align: center;
-    min-height: 100px;
+    min-height: 75px;
     background-color: #AAA;
 }
 

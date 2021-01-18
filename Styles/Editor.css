@@ -1,5 +1,13 @@
 .editor{
-    margin: 15px 0px;
+    
+}
+
+.editor .area{
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: top;
+    height: 500px;
 }
 
 /*MENUS*/
@@ -37,19 +45,21 @@
 /* FERRAMENTAS */
 
 .editor .ferramentas{
-    background-color: #333444;
+    background-color: #797942;
+    width: 10%;
 }
 
 /* BIBLIOTECA */
 
 .editor .biblioteca{
     background-color: #159753;
+    width: 20%;
 }
 
 .editor .biblioteca .hierarquia{
     border-top: 1px solid black;
     overflow: auto;
-    height: 150px;
+    height: 480px;
 }
 
 .editor .biblioteca .hierarquia .caret{
@@ -93,12 +103,21 @@
 /* AREA DE TRABALHO*/
 
 .editor .area-trabalho{
-    background-color: #024680;   
+    background-color: #024680;
+    text-align: center;
+    width: 70%;
+}
+
+.editor .area-trabalho #card{
+    border: 1px solid black;
+    margin: 5px;
+    height: 450px;
+    width: 400px;
 }
 
 /* MODAL */
 
-.modal {
+.editor .modal {
     position: fixed;
     z-index: 1;
     left: 0;
@@ -110,7 +129,7 @@
     background-color: rgba(0,0,0,0.4);
 }
 
-.modal .conteudo-modal {
+.editor .modal .conteudo-modal {
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
@@ -118,15 +137,15 @@
     width: 80%;
 }
 
-.modal .fechar {
+.editor .modal .fechar {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.modal .fechar:hover,
-.modal .fechar:focus {
+.editor .modal .fechar:hover,
+.editor .modal .fechar:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
