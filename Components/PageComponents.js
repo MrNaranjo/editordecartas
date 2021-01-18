@@ -41,7 +41,8 @@ class Rodape extends React.Component {
         }
 
         return <div className="rodape">
-            &copy; {data} Naranjo Tech
+            <p>Software Livre</p>
+            <p>{data} Naranjo Tech</p>
         </div>;
     }
 }
