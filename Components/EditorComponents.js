@@ -182,9 +182,9 @@ class Ferramentas extends React.Component {
     render() {
         return <div className="ferramentas area">
             <ul>
-                <li>Mover</li>
-                <li>Texto</li>
-                <li>Imagem</li>
+                <li><a>Mover</a></li>
+                <li><a>Texto</a></li>
+                <li><a>Imagem</a></li>
             </ul>
         </div>;
     }
@@ -215,7 +215,7 @@ class Biblioteca extends React.Component {
         });
 
         return <div className="biblioteca area">
-            <p>[{Object.keys(this.props.collections).length}] Collections</p>
+            <p style={{padding:"5px"}}>[{Object.keys(this.props.collections).length}] Acervo</p>
             <div>
                 <ul className="hierarquia">
                     {hierarquia}
