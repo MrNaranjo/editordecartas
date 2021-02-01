@@ -1,7 +1,3 @@
-.editor{
-
-}
-
 .editor .area{
     display: inline-block;
     zoom: 1;
@@ -68,6 +64,10 @@
     background-color: #111111;
 }
 
+.editor .ferramentas li .selecionada{
+    background-color: #111111;
+}
+
 /* BIBLIOTECA */
 
 .editor .biblioteca{
@@ -76,47 +76,81 @@
     color: white;
 }
 
-.editor .biblioteca .hierarquia{
+.editor .hierarquia{
     border-top: 1px solid black;
     overflow: auto;
-    height: 480px;
+    height: 445px;
 }
 
-.editor .biblioteca .hierarquia .caret{
+.editor .hierarquia .caret{
     cursor: pointer;
     user-select: none;
 }
 
-.editor .biblioteca .hierarquia .caret::before{
+.editor .hierarquia .caret::before{
     content: "\25B6";
     display: inline-block;
     margin-right: 6px;
 }
 
-.editor .biblioteca .hierarquia .caret-down::before{
+.editor .hierarquia .caret-down::before{
     transform: rotate(90deg);
 }
 
-.editor .biblioteca .hierarquia .aninhado{
+.editor .hierarquia .aninhado{
     display: none;
 }
 
-.editor .biblioteca .hierarquia .ativo{
+.editor .hierarquia .ativo{
     display: block;
 }
 
-.editor .biblioteca .hierarquia .collection{
+.editor .hierarquia .collection{
     padding: 0px 10px;
 }
 
-.editor .biblioteca .hierarquia .collection .imagem-biblioteca{
+.editor .hierarquia .item{
     padding: 0px 20px;
+    cursor: pointer;
 }
 
-.editor .biblioteca .hierarquia .collection .miniatura{
-    min-height: 10px;
-    min-width: 10px;
+.editor .hierarquia .miniatura{
+    max-height: 10px;
+    max-width: 10px;
     padding-right: 5px;
+}
+
+/* CAMADAS */
+
+.editor .camadas{
+    background-color: #404040;
+    width: 20%;
+    color: white;
+}
+
+.editor .camadas .actions{
+    size: 36px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.editor .camadas .actions li{
+    display:inline-block;
+}
+
+.editor .camadas .actions li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 5px 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.editor .camadas .actions li a:hover{
+    background-color: #111111;
 }
 
 /* AREA DE TRABALHO*/
